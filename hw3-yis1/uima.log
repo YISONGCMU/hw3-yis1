@@ -1,0 +1,31 @@
+13-10-9 14:56:45 - 10: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.<init>(128): 佚連: UIMA Version 2.4.0 UIMA-AS Version 2.4.0
+13-10-9 14:56:46 - 10: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.setupConnection: 佚連: UIMA AS Client Created Shared Connection To Broker: tcp://sy-PC:61616
+13-10-9 14:56:46 - 10: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.initializeProducer: 佚連: Initializing JMS Message Producer. Broker: tcp://sy-PC:61616 Queue Name: myQueueName
+13-10-9 14:56:46 - 10: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.initializeConsumer: 佚連: Initializing JMS Message Consumer. Broker: tcp://sy-PC:61616 Queue Name: ID:sy-PC-1328-1381345005984-0:0:1
+13-10-9 14:56:51 - 11: org.apache.uima.aae.delegate.Delegate$2.Delegate.TimerTask.run: 少御: Timeout While Waiting For Reply From Delegate:myQueueName GetMeta Request Timed Out. Configured Reply Window Of 5,000.
+13-10-9 14:56:51 - 11: org.apache.uima.adapter.jms.client.ClientServiceDelegate.handleError: 少御: Request For Metadata Has Timed-out. Service Queue:myQueueName
+13-10-9 14:56:51 - 11: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngineCommon_impl.notifyOnTimout: 少御: Request For Metadata Has Timed-out. Service Queue:myQueueName
+13-10-9 14:56:51 - 10: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.initialize: 少御: Aborting Asynchronous Client Due to: Metadata Timeout
+13-10-9 14:56:51 - 10: org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.notifyOnInitializationFailure: 少御: Top Level Controller Initialization Exception.
+org.apache.uima.resource.ResourceInitializationException
+	at org.apache.uima.adapter.jms.client.BaseUIMAAsynchronousEngine_impl.initialize(BaseUIMAAsynchronousEngine_impl.java:759)
+	at org.apache.uima.aae.jms_adapter.JmsAnalysisEngineServiceStub.<init>(JmsAnalysisEngineServiceStub.java:145)
+	at org.apache.uima.aae.jms_adapter.JmsAnalysisEngineServiceAdapter.initialize(JmsAnalysisEngineServiceAdapter.java:47)
+	at org.apache.uima.impl.CustomResourceFactory_impl.produceResource(CustomResourceFactory_impl.java:92)
+	at org.apache.uima.impl.CompositeResourceFactory_impl.produceResource(CompositeResourceFactory_impl.java:62)
+	at org.apache.uima.UIMAFramework.produceResource(UIMAFramework.java:269)
+	at org.apache.uima.UIMAFramework.produceResource(UIMAFramework.java:314)
+	at org.apache.uima.UIMAFramework.produceAnalysisEngine(UIMAFramework.java:425)
+	at org.apache.uima.collection.impl.cpm.container.CPEFactory.produceIntegratedCasProcessor(CPEFactory.java:1088)
+	at org.apache.uima.collection.impl.cpm.container.CPEFactory.getCasProcessors(CPEFactory.java:550)
+	at org.apache.uima.collection.impl.cpm.BaseCPMImpl.init(BaseCPMImpl.java:253)
+	at org.apache.uima.collection.impl.cpm.BaseCPMImpl.<init>(BaseCPMImpl.java:127)
+	at org.apache.uima.collection.impl.CollectionProcessingEngine_impl.initialize(CollectionProcessingEngine_impl.java:75)
+	at org.apache.uima.impl.UIMAFramework_impl._produceCollectionProcessingEngine(UIMAFramework_impl.java:420)
+	at org.apache.uima.UIMAFramework.produceCollectionProcessingEngine(UIMAFramework.java:864)
+	at org.apache.uima.tools.cpm.CpmPanel.startProcessing(CpmPanel.java:573)
+	at org.apache.uima.tools.cpm.CpmPanel.access$000(CpmPanel.java:105)
+	at org.apache.uima.tools.cpm.CpmPanel$1.run(CpmPanel.java:713)
+Caused by: org.apache.uima.aae.error.UimaASMetaRequestTimeout
+	... 18 more
+
